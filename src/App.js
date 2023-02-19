@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { ErrorPage, MainPage } from './pages'
+import './constants.scss'
+import { useFetch } from './services/use-fetch'
+import { Navbar } from './components'
 
-function App() {
+const URL = process.env.REACT_APP_DATA_SOURCE
+// const URL = 'https://error-url'
+
+export const App = () => {
+  const [isLoading, hasError] = useFetch(URL) // custom hook, where the fetch logic is ... also saves data to redux
+
+  // we can also use (set up) React Router for that
+  const renderCorrectPage = () => {
+    return <MainPage loading={isLoading} />
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      {hasError ? <ErrorPage /> : renderCorrectPage()}
     </div>
-  );
+  )
 }
-
-export default App;

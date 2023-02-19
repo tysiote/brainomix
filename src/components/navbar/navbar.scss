@@ -1,0 +1,91 @@
+@import "src/constants";
+
+$navbar-side-padding: 10px;
+$item-hover-color: $black-alt2;
+
+.navbar {
+  width: 100%;
+  display: flex;
+  background-color: $black;
+  border-bottom: 1px solid $black-alt;
+  box-sizing: border-box;
+  color: $white;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: $navbar-height;
+  position: sticky;
+  top: 0;
+  padding: 0 $navbar-side-padding;
+
+  .navbar-application-label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: $primary;
+  }
+
+  .language-option {
+    display: flex;
+    align-items: center;
+    color: $white;
+
+    :first-child {
+      margin-right: 5px;
+    }
+
+    img {
+      height: 30px;
+      width: auto;
+    }
+  }
+
+  .navbar-dropdown-wrapper {
+    .navbar-dropdown {
+      height: $navbar-language-height;
+      box-sizing: border-box;
+      min-width: 200px;
+      background-color: $black-alt;
+    }
+  }
+}
+
+.MuiPopover-root {
+  .MuiPaper-root {
+    background-color: $black-alt;
+    ul {
+      li {
+        background-color: $black-alt;
+        .language-option {
+          display: flex;
+          align-items: center;
+          color: $white;
+
+          :first-child {
+            margin-right: 5px;
+          }
+
+          img {
+            height: 30px;
+            width: auto;
+          }
+
+          .language-name {
+            &:hover {
+              background-color: $item-hover-color;
+            }
+          }
+
+          &:hover {
+            background-color: $item-hover-color;
+          }
+        }
+
+        &:hover {
+          background-color: $item-hover-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "src/constants";
+
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 3em;
+  color: $error-color;
+  background-color: $black;
+}

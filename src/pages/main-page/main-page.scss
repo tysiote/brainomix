@@ -1,0 +1,47 @@
+@import "src/constants";
+
+.main-page {
+  width: 100%;
+  background-color: $black;
+  color: $white;
+
+  .main-page-loading {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+
+    .loading-content {
+      width: 40%;
+      min-width: 350px;
+    }
+
+    .progress {
+      width: 100%;
+
+      .MuiLinearProgress-root {
+        background-color: $secondary;
+        .MuiLinearProgress-bar {
+          background-color: $primary;
+        }
+      }
+    }
+
+    .loading-text {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      color: $secondary;
+    }
+  }
+
+  .main-page-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - #{$navbar-height});
+    box-sizing: border-box;
+  }
+}
