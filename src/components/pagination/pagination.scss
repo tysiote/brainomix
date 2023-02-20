@@ -1,0 +1,47 @@
+@import "src/constants";
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 50px;
+  max-height: 100px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  background-color: $black-alt2;
+  padding: 5px;
+  box-sizing: border-box;
+  color: $white;
+
+  .items-per-page {
+    .MuiInputBase-root {
+      height: 40px;
+      background-color: $black-alt;
+      color: $white;
+
+      .MuiSvgIcon-root {
+        color: $white;
+      }
+
+      &.Mui-focused {
+        fieldset {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  .page-selection {
+    .MuiButtonBase-root {
+      color: $white;
+      &.Mui-disabled {
+        color: $white-disabled;
+      }
+
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}

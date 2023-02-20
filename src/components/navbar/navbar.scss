@@ -16,6 +16,7 @@ $item-hover-color: $black-alt2;
   position: sticky;
   top: 0;
   padding: 0 $navbar-side-padding;
+  z-index: 2;
 
   .navbar-application-label {
     width: 100%;
@@ -47,6 +48,16 @@ $item-hover-color: $black-alt2;
       box-sizing: border-box;
       min-width: 200px;
       background-color: $black-alt;
+
+      .MuiSvgIcon-root {
+        color: $white;
+      }
+
+      &.Mui-focused {
+        fieldset {
+          border-color: $primary;
+        }
+      }
     }
   }
 }
@@ -54,6 +65,7 @@ $item-hover-color: $black-alt2;
 .MuiPopover-root {
   .MuiPaper-root {
     background-color: $black-alt;
+    color: $white;
     ul {
       li {
         background-color: $black-alt;

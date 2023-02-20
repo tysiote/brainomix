@@ -1,11 +1,18 @@
 // import your translation file
 import { translations as mainPageTranslations } from '../../pages/main-page/translations'
 import { translations as errorPageTranslations } from '../../pages/error-page/translations'
+import { translations as paginationTranslations } from '../../components/pagination/translations'
+import { translations as patientTranslations } from '../../components/patient-card/translations'
 import { useSelector } from 'react-redux'
 
 const setTranslations = () => {
   // use your translation file
-  const translationObjects = [mainPageTranslations, errorPageTranslations]
+  const translationObjects = [
+    mainPageTranslations,
+    errorPageTranslations,
+    paginationTranslations,
+    patientTranslations
+  ]
   return translationObjects.reduce((acc, item) => ({ ...acc, ...item }), {})
 }
 const translations = setTranslations()

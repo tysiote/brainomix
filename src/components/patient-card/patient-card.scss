@@ -1,0 +1,107 @@
+@import "src/constants";
+
+.patient-card {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  min-width: 300px;
+  min-height: 180px;
+  background-color: $black-alt;
+  color: $white;
+  font-size: 1.05em;
+
+  &:hover:not(.extended) {
+    background-color: $black-alt2;
+    cursor: pointer;
+    color: $white-alt;
+  }
+
+  &.selected {
+    border: 1px solid $primary;
+  }
+
+  &.extended {
+    min-height: 450px;
+    min-width: 300px;
+    width: 500px;
+    padding: 20px;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: bold;
+    color: $white-disabled;
+  }
+
+  .patient-index {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .patient-id {
+    color: $white-disabled;
+  }
+
+  .patient-state {
+    margin-bottom: 20px;
+  }
+
+  .patient-study-description {
+    margin: 10px 0;
+  }
+
+  .patient-series-description {
+    margin: 10px 0;
+  }
+
+  .patient-thumbnail {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+  }
+
+  .patient-url {
+    a {
+      color: $primary;
+
+      &:visited {
+        color: $primary;
+      }
+
+      &:hover {
+        color: $secondary
+      }
+    }
+  }
+
+  .patient-close-card {
+    width: 100%;
+    margin-top: 10px;
+    button {
+      background-color: $black-alt2;
+      color: $white;
+      width: 100%;
+
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .patient-card {
+    &.extended {
+      min-width: 100%;
+      width: 100%;
+      padding: 20px;
+      margin: 20px 0;
+    }
+  }
+}

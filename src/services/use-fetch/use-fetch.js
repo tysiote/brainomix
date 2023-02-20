@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateData } from '../redux/reducers/brainomix-data-reducer'
+import { updateData, updateFilteredData } from '../redux/reducers/brainomix-data-reducer'
+// import { generateDummyData } from '../generators/dummy-data-generator' // uncomment for having dummy data
 
 export const useFetch = (url) => {
   const [data, setData] = useState()
@@ -22,9 +23,12 @@ export const useFetch = (url) => {
   }, [url])
 
   const handleOnDataFetched = (rawData) => {
-    dispatch(updateData(rawData.items))
+    const items = rawData.items // comment for using dummy data
+    // const items = generateDummyData(2000) // uncomment for having dummy data
+    dispatch(updateData(items))
+    dispatch(updateFilteredData(items))
     setIsLoading(false)
-    setData(data)
+    setData(items)
   }
 
   const handleOnError = (err) => {

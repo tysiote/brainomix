@@ -1,0 +1,70 @@
+@import "src/constants";
+
+$row-height: 60px;
+$row-height-dense: 40px;
+$cell-padding: 5px;
+
+.patients-table {
+  max-height: 800px;
+  //height: 1200px;
+  overflow-y: auto;
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: relative;
+
+    thead {
+      border-bottom: 1px solid $primary;
+      z-index: 2;
+      width: 100%;
+
+      tr {
+        background-color: $black;
+        height: $row-height;
+
+        th {
+          text-align: left;
+          box-sizing: border-box;
+          padding: $cell-padding;
+          position: sticky;
+          top: 0;
+          background-color: $black;
+          border-bottom: 1px solid $primary;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: $row-height;
+        background-color: $black-alt;
+        &:nth-child(2n) {
+          background-color: $black-alt2;
+        }
+
+        td {
+          box-sizing: border-box;
+          padding: $cell-padding;
+        }
+
+        &:hover {
+          background-color: $black;
+          color: $primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &.dense {
+    table {
+      tbody {
+        tr {
+          height: $row-height-dense;
+        }
+      }
+    }
+  }
+}
